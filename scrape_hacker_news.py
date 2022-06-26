@@ -14,5 +14,9 @@ print(first_article.getText())
 article_link = first_article.get("href")
 print(article_link)
 
-article_upvote = soup.find(name="span", id="score_31643917")
-print(article_upvote.getText())
+article_upvote = soup.find(name="span", class_="score")
+
+if article_upvote == None:
+    print("No upvotes, check back later")
+else:
+    print(article_upvote.getText())
